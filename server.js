@@ -6,6 +6,7 @@ const path = require("path")
 const bodyParser = require('body-parser');
 const { nextTick } = require('process');
 const { json } = require('express');
+require('dotenv').config()  
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
