@@ -1,35 +1,48 @@
 <html>
-    <head></head>
-    <body>
-        <h1>Login</h1>
-        <ul>
-            <li>
-                <a href="/">Home</a></li>
-            </li>
-            <li>
-                <a href="/about_us">About us</a></li>
-            </li>
-        </ul>
-        <br/>
+
+<head></head>
+
+<body>
+    <h1>Login</h1>
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        </li>
+        <li>
+            <a href="/about_us">About us</a>
+        </li>
+        </li>
+    </ul>
+    <br />
+    <form action="/login" method="post" enctype="application/x-www-form-urlencoded">
         <table>
             <tr>
                 <td>
                     user name:
                 </td>
                 <td>
-                    <input type="text" value="user" id="user"/>
+                    <input type="text" placeholder="user" id="username" name="username" />
                 </td>
-                </tr>
-                <tr>
-                    <td>
-                        password:
-                    </td>
-                    <td>
-                        <input type="password" value="" id="password"/>
-                    </td>
-                </tr>
+            </tr>
+            <tr>
+                <td>
+                    password:
+                </td>
+                <td>
+                    <input type="password" value="" id="password" name="password"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <input type="submit" value="submit" id="submit"/>
+                </td>
+            </tr>
         </table>
-        
-        
-    </body>
+    </form>
+
+</body>
+
 </html>

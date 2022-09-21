@@ -3,7 +3,9 @@
 const exp = require('express');
 const app = exp();
 const path = require("path")
+const bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname,"home.html"));
@@ -25,8 +27,11 @@ app.route("/login")
     .get(function(req, res){
         res.sendFile(path.join(__dirname,"login.html"));
     })
-    .post(function(req, pos){
-
+    .post(function(req, res){
+        console.log("req: "+(req.body))
+        console.log("username:" +req.body.username);
+        console.log("password:" +req.body.password);
+        res.sendFile(path.join(__dirname,"loged.html"));
     });
 
 var port = process.env.PORT || 8080; //default setting or value for port var
