@@ -5,7 +5,7 @@ const app = exp();
 
 
 app.get("/", function (req, res) {
-    res.send("text msg");
+    res.sendFile("./home.html");
 });
 
 app.use("/about_us", function(req, res){//doesn care the http method that are using
@@ -20,7 +20,7 @@ app.use("/about_us", function(req, res){//doesn care the http method that are us
 app.post("/login", function(req, pos){
 })*/
 
-app.route("/plogin")
+app.route("/login")
     .get(function(req, pos){
 
     })
