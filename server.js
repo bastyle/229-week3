@@ -2,14 +2,15 @@
 
 const exp = require('express');
 const app = exp();
+const path = require("path")
 
 
 app.get("/", function (req, res) {
-    res.sendFile("./home.html");
+    res.sendFile(path.join(__dirname,"home.html"));
 });
 
 app.use("/about_us", function(req, res){//doesn care the http method that are using
-    res.send("about us");
+    res.sendFile(path.join(__dirname,"about_us.html"));
 });
 
 // params past & callback function
@@ -21,8 +22,8 @@ app.post("/login", function(req, pos){
 })*/
 
 app.route("/login")
-    .get(function(req, pos){
-
+    .get(function(req, res){
+        res.sendFile(path.join(__dirname,"login.html"));
     })
     .post(function(req, pos){
 
