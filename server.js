@@ -5,6 +5,7 @@ const app = exp();
 const path = require("path")
 const bodyParser = require('body-parser');
 const { nextTick } = require('process');
+const { json } = require('express');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -37,9 +38,10 @@ app.route("/login")
 
 //
 app.get("/product/:id", function (req, res) {
-    var product_id=req.params.id;
-    console.log("product_id: "+product_id);
-    res.send("product_id: "+product_id);
+    var product_id={"id" : Number(req.params.id), name : "product one"};
+    console.log("product: "+JSON.stringify(product_id));
+    //res.send("product_id: "+product_id);
+    res.json(product_id)
 })
 
 var port = process.env.PORT || 8080; //default setting or value for port var
